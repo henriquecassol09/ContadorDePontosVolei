@@ -1,74 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: black;
     color: white;
     text-align: center;
     margin: 0;
     padding: 20px;
-}
-
-h1 {
-    color: white;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.scores {
+.title {
+    background: linear-gradient(45deg, #003366 0%, #dc3545 50%, #003366 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid #333;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    font-size: 32px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-container {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 20px 0;
+    max-width: 1200px;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
-p {
-    font-size: 18px;
-    margin: 10px 0;
+.team-container {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8) 0%, rgba(40, 40, 40, 0.8) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.15);
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-span {
-    font-weight: bold;
+.team-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2);
 }
 
 .team-a {
-    color: #003366;
+    border: 3px solid #003366;
 }
 
 .team-b {
+    border: 3px solid #dc3545;
+}
+
+.team-a h2 {
+    color: #003366;
+    text-shadow: 0 2px 4px rgba(0, 51, 102, 0.7);
+}
+
+.team-b h2 {
     color: #dc3545;
+    text-shadow: 0 2px 4px rgba(220, 53, 69, 0.7);
+}
+
+p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.team-score {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sets-count {
+    font-size: 22px;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(50, 50, 50, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sets-number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.team-a-sets {
+    color: #003366;
+    text-shadow: 0 1px 2px #003366;
+}
+
+.team-b-sets {
+    color: #dc3545;
+    text-shadow: 0 1px 2px #dc3545;
 }
 
 .buttons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 0; /* Removido o gap para eliminar espaços */
+    margin-top: 25px;
 }
 
 button {
-    padding: 12px 24px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    margin: 0; /* Removida qualquer margem */
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 #btnPointA {
@@ -80,6 +138,11 @@ button:hover {
     background-color: #002244;
 }
 
+#btnSubtractPointA {
+    background-color: #0056b3;
+    color: white;
+}
+
 #btnPointB {
     background-color: #dc3545;
     color: white;
@@ -89,13 +152,27 @@ button:hover {
     background-color: #c82333;
 }
 
+#btnSubtractPointB {
+    background-color: #e74c3c;
+    color: white;
+}
+
 #btnReset {
     background-color: #333;
     color: white;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 12px;
 }
 
 #btnReset:hover {
     background-color: #555;
+}
+
+.global-info {
+    margin-top: 20px;
+    font-size: 22px;
 }
 
 .message {
@@ -103,16 +180,29 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 40px;
-    border-radius: 10px;
-    font-size: 20px;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%);
+    padding: 25px 50px;
+    border-radius: 20px;
+    font-size: 24px;
     color: white;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
     z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .message.visible {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .team-container {
+        width: 95%;
+        margin: 15px auto;
+    }
 }

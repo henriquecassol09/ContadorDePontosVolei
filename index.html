@@ -5,25 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de Pontos de Vôlei</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Contador de Pontos de Vôlei</h1>
+    <h1 class="title">Contador de Pontos de Vôlei</h1>
     
-    <div class="container">
+    <div class="main-container">
+        <div class="team-container team-a">
+            <h2>Time A</h2>
+            <p>Pontos: <span id="scoreA" class="team-score">0</span></p>
+            <p class="sets-count">Sets ganhos: <span id="setsA" class="sets-number team-a-sets">0</span></p>
+            <div class="buttons">
+                <button id="btnPointA">Adicionar ponto</button>
+                <button id="btnSubtractPointA">Subtrair ponto</button>
+            </div>
+        </div>
+        
+        <div class="team-container team-b">
+            <h2>Time B</h2>
+            <p>Pontos: <span id="scoreB" class="team-score">0</span></p>
+            <p class="sets-count">Sets ganhos: <span id="setsB" class="sets-number team-b-sets">0</span></p>
+            <div class="buttons">
+                <button id="btnPointB">Adicionar ponto</button>
+                <button id="btnSubtractPointB">Subtrair ponto</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="global-info">
         <p>Set atual: <span id="currentSet">1/3</span></p>
-        
-        <div class="scores">
-            <p>Pontos do Time A: <span id="scoreA" class="team-a">0</span></p>
-            <p>Pontos do Time B: <span id="scoreB" class="team-b">0</span></p>
-        </div>
-        
-        <p>Sets ganhos: Time A - <span id="setsA">0</span>, Time B - <span id="setsB">0</span></p>
-        
-        <div class="buttons">
-            <button id="btnPointA">Ponto para Time A</button>
-            <button id="btnPointB">Ponto para Time B</button>
-            <button id="btnReset">Reiniciar Jogo</button>
-        </div>
+        <button id="btnReset">Reiniciar Jogo</button>
     </div>
     
     <div id="message" class="message">Mensagem aqui</div>
