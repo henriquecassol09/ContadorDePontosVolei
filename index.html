@@ -12,7 +12,7 @@
     
     <div class="main-container">
         <div class="team-container team-a">
-            <h2>Time A</h2>
+            <h2 id="teamAHeader" class="renameable">Time A</h2>
             <p>Pontos: <span id="scoreA" class="team-score">0</span></p>
             <p class="sets-count">Sets ganhos: <span id="setsA" class="sets-number team-a-sets">0</span></p>
             <div class="buttons">
@@ -22,13 +22,31 @@
         </div>
         
         <div class="team-container team-b">
-            <h2>Time B</h2>
+            <h2 id="teamBHeader" class="renameable">Time B</h2>
             <p>Pontos: <span id="scoreB" class="team-score">0</span></p>
             <p class="sets-count">Sets ganhos: <span id="setsB" class="sets-number team-b-sets">0</span></p>
             <div class="buttons">
                 <button id="btnPointB">Adicionar ponto</button>
                 <button id="btnSubtractPointB">Subtrair ponto</button>
             </div>
+        </div>
+    </div>
+    
+    <div class="set-blocks-container">
+        <div class="set-headers">
+            <div>1-set</div>
+            <div>2-set</div>
+            <div>3-set</div>
+        </div>
+        <div class="set-row team-a-scores">
+            <div class="set-block" id="setA1">0</div>
+            <div class="set-block" id="setA2">0</div>
+            <div class="set-block" id="setA3">0</div>
+        </div>
+        <div class="set-row team-b-scores">
+            <div class="set-block" id="setB1">0</div>
+            <div class="set-block" id="setB2">0</div>
+            <div class="set-block" id="setB3">0</div>
         </div>
     </div>
     

@@ -1,208 +1,330 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .title {
-    background: linear-gradient(45deg, #003366 0%, #dc3545 50%, #003366 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    border-bottom: 3px solid #333;
-    padding: 10px 20px;
-    margin-bottom: 30px;
-    font-size: 32px;
-    animation: fadeIn 1.5s ease-in-out;
+  background: linear-gradient(45deg, #0056b3 0%, #dc3545 50%, #0056b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-bottom: 3px solid #333;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  /* Reduzindo tamanho do título */
+  font-size: 22px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilizando a edição de nomes */
+.renameable {
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.renameable:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.rename-input {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  width: 150px;
 }
 
 .main-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1200px;
-    gap: 30px;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 900px;
+  gap: 60px;
+  margin-bottom: 15px;
 }
 
 .team-container {
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8) 0%, rgba(40, 40, 40, 0.8) 100%);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.15);
-    flex: 1;
-    min-width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.8) 0%, rgba(40, 40, 40, 0.8) 100%);
+  /* Reduzindo padding */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.15);
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2);
 }
 
 .team-a {
-    border: 3px solid #003366;
+  border: 3px solid #0056b3;
 }
 
 .team-b {
-    border: 3px solid #dc3545;
+  border: 3px solid #dc3545;
 }
 
 .team-a h2 {
-    color: #003366;
-    text-shadow: 0 2px 4px rgba(0, 51, 102, 0.7);
+  color: #0056b3;
+  text-shadow: 0 2px 4px rgba(0, 86, 179, 0.7);
+  /* Reduzindo tamanho */
+  font-size: 20px;
+  margin: 5px 0;
 }
 
 .team-b h2 {
-    color: #dc3545;
-    text-shadow: 0 2px 4px rgba(220, 53, 69, 0.7);
+  color: #dc3545;
+  text-shadow: 0 2px 4px rgba(220, 53, 69, 0.7);
+  /* Reduzindo tamanho */
+  font-size: 20px;
+  margin: 5px 0;
 }
 
 p {
-    font-size: 20px;
-    margin: 15px 0;
+  /* Reduzindo tamanho */
+  font-size: 16px;
+  margin: 10px 0;
 }
 
 .team-score {
-    font-size: 28px;
-    font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sets-count {
-    font-size: 22px;
-    border: 2px solid #333;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(50, 50, 50, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Reduzindo tamanho */
+  font-size: 16px;
+  border: 2px solid #333;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(50, 50, 50, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .sets-number {
-    font-size: 24px;
-    font-weight: bold;
+  /* Reduzindo tamanho */
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .team-a-sets {
-    color: #003366;
-    text-shadow: 0 1px 2px #003366;
+  color: #0056b3;
+  text-shadow: 0 1px 2px #0056b3;
 }
 
 .team-b-sets {
-    color: #dc3545;
-    text-shadow: 0 1px 2px #dc3545;
+  color: #dc3545;
+  text-shadow: 0 1px 2px #dc3545;
+}
+
+.set-blocks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+.set-headers {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.set-headers div {
+  /* Reduzindo tamanho */
+  font-size: 14px;
+  padding: 5px;
+  width: 70px;
+}
+
+.set-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.set-block {
+  /* Reduzindo tamanho dos blocos */
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Reduzindo tamanho da fonte */
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Blocos do Time A com fundo azul */
+.team-a-scores .set-block {
+  background: #0056b3;
+  color: white;
+}
+
+/* Blocos do Time B com fundo vermelho */
+.team-b-scores .set-block {
+  background: #dc3545;
+  color: white;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0; /* Removido o gap para eliminar espaços */
-    margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 15px;
 }
 
 button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    margin: 0; /* Removida qualquer margem */
+  /* Reduzindo tamanho dos botões */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin: 0;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 #btnPointA {
-    background-color: #003366;
-    color: white;
+  background-color: #0056b3;
+  color: white;
 }
 
 #btnPointA:hover {
-    background-color: #002244;
+  background-color: #004494;
 }
 
 #btnSubtractPointA {
-    background-color: #0056b3;
-    color: white;
+  background-color: #0066cc;
+  color: white;
 }
 
 #btnPointB {
-    background-color: #dc3545;
-    color: white;
+  background-color: #dc3545;
+  color: white;
 }
 
 #btnPointB:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 #btnSubtractPointB {
-    background-color: #e74c3c;
-    color: white;
+  background-color: #e74c3c;
+  color: white;
 }
 
 #btnReset {
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 12px;
+  background-color: #333;
+  color: white;
+  margin-top: 10px;
+  /* Reduzindo tamanho */
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 12px;
 }
 
 #btnReset:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 .global-info {
-    margin-top: 20px;
-    font-size: 22px;
+  margin-top: 10px;
+  /* Reduzindo tamanho */
+  font-size: 16px;
 }
 
 .message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%);
-    padding: 25px 50px;
-    border-radius: 20px;
-    font-size: 24px;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
-    z-index: 1000;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%);
+  /* Reduzindo tamanho */
+  padding: 20px 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .message.visible {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-    
-    .team-container {
-        width: 95%;
-        margin: 15px auto;
-    }
+  .main-container,
+  .set-blocks-container {
+    flex-direction: column;
+  }
+
+  .team-container,
+  .set-headers,
+  .set-row {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .set-headers,
+  .set-row {
+    flex-wrap: wrap;
+  }
+
+  .set-block {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
 }
