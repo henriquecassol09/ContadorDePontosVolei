@@ -11,12 +11,12 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden; /* Previne scroll horizontal */
+  overflow-x: hidden;
 }
 
 .title {
   background: linear-gradient(45deg, #0056b3 0%, #dc3545 50%, #0056b3 100%);
-  -webkit-background-clip: text;
+  -webkit-color-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-bottom: 3px solid #333;
@@ -287,7 +287,7 @@ button:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Media queries melhoradas para responsividade completa */
+/* Responsividade completa e corrigida */
 
 /* Tablets grandes e desktop pequeno */
 @media (max-width: 992px) {
@@ -374,7 +374,7 @@ button:hover {
   }
 }
 
-/* Otimizando completamente para smartphones */
+/* Smartphones */
 @media (max-width: 480px) {
   body {
     padding: 5px;
@@ -461,7 +461,6 @@ button:hover {
     font-size: 16px;
     border-radius: 8px;
   }
-  /* </CHANGE> - This comment was likely the source of the parsing error */
 
   .buttons {
     margin-top: 10px;
@@ -499,7 +498,7 @@ button:hover {
   }
 }
 
-/* Ajustes para telas muito pequenas */
+/* Telas muito pequenas */
 @media (max-width: 360px) {
   .title {
     font-size: 15px;
@@ -527,7 +526,6 @@ button:hover {
     height: 50px;
     font-size: 15px;
   }
-  /* </CHANGE> - This comment was likely the source of the parsing error */
 
   button {
     padding: 10px 14px;

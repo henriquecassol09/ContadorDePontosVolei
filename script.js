@@ -68,7 +68,9 @@ function subtractPoint(team) {
 }
 
 function checkSetWinner() {
-  if ((scoreA >= 25 && scoreA >= scoreB + 2) || (scoreB >= 25 && scoreB >= scoreA + 2)) {
+  const pointsToWin = currentSet === 3 ? 15 : 25
+
+  if ((scoreA >= pointsToWin && scoreA >= scoreB + 2) || (scoreB >= pointsToWin && scoreB >= scoreA + 2)) {
     const currentWinner = scoreA > scoreB ? "A" : "B"
     const winnerName = currentWinner === "A" ? teamAName : teamBName
 
