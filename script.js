@@ -47,6 +47,8 @@ function saveName(element, team, newName) {
 }
 
 function addPoint(team) {
+  if (setsWonA === 2 || setsWonB === 2) return
+
   if (team === "A") {
     scoreA++
     document.getElementById("scoreA").textContent = scoreA
@@ -58,6 +60,8 @@ function addPoint(team) {
 }
 
 function subtractPoint(team) {
+  if (setsWonA === 2 || setsWonB === 2) return
+
   if (team === "A" && scoreA > 0) {
     scoreA--
     document.getElementById("scoreA").textContent = scoreA
@@ -72,33 +76,26 @@ function checkSetWinner() {
 
   if ((scoreA >= pointsToWin && scoreA >= scoreB + 2) || (scoreB >= pointsToWin && scoreB >= scoreA + 2)) {
     const currentWinner = scoreA > scoreB ? "A" : "B"
-    const winnerName = currentWinner === "A" ? teamAName : teamBName
 
     if (currentWinner === "A") {
       setsWonA++
       document.getElementById("setsA").textContent = setsWonA
       scoresA[currentSet - 1] = scoreA
       scoresB[currentSet - 1] = scoreB
-      showMessage(`${teamAName} venceu o set ${currentSet}!`, "#003366")
+      showMessage(`${teamAName} venceu o set ${currentSet}!`, "#7b68ee")
     } else {
       setsWonB++
       document.getElementById("setsB").textContent = setsWonB
       scoresA[currentSet - 1] = scoreA
       scoresB[currentSet - 1] = scoreB
-      showMessage(`${teamBName} venceu o set ${currentSet}!`, "#dc3545")
+      showMessage(`${teamBName} venceu o set ${currentSet}!`, "#dc143c")
     }
 
     updateSetBlocks()
 
-    if (currentWinner === previousWinner) {
-      showMessage(
-        `${winnerName} venceu a partida por ganhar 2 sets seguidos!`,
-        currentWinner === "A" ? "#003366" : "#dc3545",
-      )
-      setTimeout(resetGame, 5000)
+    if (setsWonA === 2 || setsWonB === 2) {
+      determineMatchWinner()
       return
-    } else {
-      previousWinner = currentWinner
     }
 
     scoreA = 0
@@ -110,36 +107,40 @@ function checkSetWinner() {
       currentSet++
       document.getElementById("currentSet").textContent = currentSet + "/3"
     } else if (currentSet === 3) {
-      determineMatchWinner()
+      showMessage("Partida empatada 1-1. O set decisivo vai a 15 pontos!", "white")
     }
   }
 }
 
 function updateSetBlocks() {
-  setA1.textContent = scoresA[0]
-  setA2.textContent = scoresA[1]
-  setA3.textContent = scoresA[2]
-  setB1.textContent = scoresB[0]
-  setB2.textContent = scoresB[1]
-  setB3.textContent = scoresB[2]
+  setA1.textContent = scoresA[0] || 0
+  setA2.textContent = scoresA[1] || 0
+  setA3.textContent = scoresA[2] || 0
+  setB1.textContent = scoresB[0] || 0
+  setB2.textContent = scoresB[1] || 0
+  setB3.textContent = scoresB[2] || 0
 }
 
 function determineMatchWinner() {
-  if (setsWonA > setsWonB) {
-    showMessage(`${teamAName} venceu a partida!`, "#003366")
-  } else if (setsWonB > setsWonA) {
-    showMessage(`${teamBName} venceu a partida!`, "#dc3545")
+  if (setsWonA === 2) {
+    showMessage(`${teamAName} venceu a partida! Placar de sets: ${setsWonA}-${setsWonB}`, "#7b68ee")
+  } else if (setsWonB === 2) {
+    showMessage(`${teamBName} venceu a partida! Placar de sets: ${setsWonA}-${setsWonB}`, "#dc143c")
   } else {
-    showMessage("A partida empatou!", "white")
+    showMessage("A partida terminou em empate inesperado!", "white")
   }
+
   setTimeout(resetGame, 5000)
 }
 
+/* Simplified message display without gradient effects */
 function showMessage(message, color) {
   messageDiv.textContent = message
   messageDiv.style.color = color
   messageDiv.classList.add("visible")
-  setTimeout(() => messageDiv.classList.remove("visible"), 3000)
+  setTimeout(() => {
+    messageDiv.classList.remove("visible")
+  }, 3000)
 }
 
 function resetGame() {
@@ -161,7 +162,6 @@ function resetGame() {
   messageDiv.style.color = "white"
 }
 
-// Eventos
 document.getElementById("btnPointA").addEventListener("click", () => addPoint("A"))
 document.getElementById("btnSubtractPointA").addEventListener("click", () => subtractPoint("A"))
 document.getElementById("btnPointB").addEventListener("click", () => addPoint("B"))
