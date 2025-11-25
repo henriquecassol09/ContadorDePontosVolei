@@ -46,8 +46,6 @@ body {
   }
 }
 
-/* Removed typing animation */
-
 @keyframes blink {
   from {
     border-right-color: white;
@@ -73,7 +71,6 @@ body {
   background-clip: text;
 }
 
-/* Removed fadeIn animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -120,7 +117,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* Simplified background, removed gradient and complex shadows */
 .team-container {
   background: #1a1a1a;
   padding: 20px;
@@ -135,24 +131,20 @@ body {
   background: #222;
 }
 
-/* Updated to dark purple borders */
 .team-a {
   border: 3px solid #2d0052;
 }
 
-/* Updated to dark red borders */
 .team-b {
   border: 3px solid #8b0000;
 }
 
-/* Removed text-shadow effect */
 .team-a h2 {
   color: #6a4c93;
   font-size: 20px;
   margin: 5px 0;
 }
 
-/* Removed text-shadow effect */
 .team-b h2 {
   color: #dc143c;
   font-size: 20px;
@@ -164,7 +156,6 @@ p {
   margin: 10px 0;
 }
 
-/* Removed text-shadow from score */
 .team-score {
   font-size: 32px;
   font-weight: bold;
@@ -229,7 +220,6 @@ p {
   margin-bottom: 8px;
 }
 
-/* Simplified shadow */
 .set-block {
   width: 70px;
   height: 70px;
@@ -243,14 +233,12 @@ p {
   border: 2px solid #333;
 }
 
-/* Updated to dark purple blocks */
 .team-a-scores .set-block {
   background: #2d0052;
   color: #b8a8d8;
   border: none;
 }
 
-/* Updated to dark red blocks */
 .team-b-scores .set-block {
   background: #8b0000;
   color: white;
@@ -260,11 +248,10 @@ p {
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 6px; /* adicionado pequeno espaço entre os botões */
+  gap: 6px;
   margin-top: 15px;
 }
 
-/* Simplified button shadows and effects */
 button {
   padding: 10px 20px;
   border: none;
@@ -281,7 +268,6 @@ button:hover {
   opacity: 0.85;
 }
 
-/* Updated to dark purple button */
 #btnPointA {
   background-color: #2d0052;
   color: white;
@@ -296,7 +282,6 @@ button:hover {
   color: white;
 }
 
-/* Updated to dark red button */
 #btnPointB {
   background-color: #8b0000;
   color: white;
@@ -329,7 +314,6 @@ button:hover {
   font-size: 16px;
 }
 
-/* Removed gradient background, simplified to solid color */
 .message {
   position: fixed;
   top: 50%;
@@ -352,14 +336,16 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
-/* Responsividade completa e corrigida */
+/* ========================================
+   RESPONSIVIDADE - Melhorada e Centralizada
+   ======================================== */
 
 /* Tablets grandes e desktop pequeno */
 @media (max-width: 992px) {
   .main-container {
     gap: 30px;
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
   }
 
   .title {
@@ -369,16 +355,27 @@ button:hover {
 
 /* Tablets */
 @media (max-width: 768px) {
+  body {
+    padding: 15px;
+    align-items: center;
+  }
+
   .title {
     font-size: 18px;
     padding: 5px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
   }
 
   .main-container {
     flex-direction: column;
     gap: 15px;
-    padding: 0 5px;
+    padding: 0 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px auto;
   }
 
   .team-container {
@@ -387,11 +384,15 @@ button:hover {
     min-width: auto;
     padding: 15px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .team-a h2,
   .team-b h2 {
     font-size: 18px;
+    text-align: center;
   }
 
   .team-score {
@@ -400,6 +401,7 @@ button:hover {
 
   p {
     font-size: 14px;
+    text-align: center;
   }
 
   .sets-count {
@@ -412,71 +414,101 @@ button:hover {
   }
 
   .set-blocks-container {
-    max-width: 100%;
+    max-width: 400px;
     padding: 0 10px;
+    margin: 0 auto 15px auto;
+  }
+
+  .set-headers {
+    justify-content: center;
+    gap: 10px;
   }
 
   .set-headers div {
     font-size: 13px;
-    width: 60px;
+    width: 28%;
+    max-width: 70px;
+    text-align: center;
+  }
+
+  .set-row {
+    justify-content: center;
+    gap: 10px;
   }
 
   .set-block {
-    width: 60px;
+    width: 28%;
+    max-width: 70px;
     height: 60px;
     font-size: 16px;
+  }
+
+  .buttons {
+    width: 100%;
+    align-items: center;
   }
 
   button {
     padding: 12px 20px;
     font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  #btnReset {
+    max-width: 220px;
+  }
+
+  .global-info {
+    width: 100%;
+    text-align: center;
   }
 
   .message {
     padding: 15px 30px;
     font-size: 18px;
-    max-width: 80%;
+    max-width: 85%;
   }
 }
 
 /* Smartphones */
 @media (max-width: 480px) {
   body {
-    padding: 5px;
-    min-height: 100vh;
+    padding: 10px;
   }
 
   .title {
     font-size: 16px;
     padding: 8px 5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    white-space: normal;
     line-height: 1.3;
   }
 
   .main-container {
-    gap: 10px;
-    margin-bottom: 10px;
-    padding: 0;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 0 5px;
+    max-width: 100%;
   }
 
   .team-container {
     padding: 12px 10px;
     border-radius: 8px;
-    width: 100%;
   }
 
   .team-a h2,
   .team-b h2 {
-    font-size: 18px;
+    font-size: 17px;
     margin: 6px 0;
   }
 
   .team-score {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   p {
-    font-size: 14px;
+    font-size: 13px;
     margin: 6px 0;
   }
 
@@ -487,7 +519,7 @@ button:hover {
   }
 
   .sets-number {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .rename-input {
@@ -497,7 +529,7 @@ button:hover {
   }
 
   .set-blocks-container {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     width: 100%;
     max-width: 100%;
     padding: 0 5px;
@@ -505,25 +537,25 @@ button:hover {
 
   .set-headers {
     margin-bottom: 6px;
+    gap: 8px;
   }
 
   .set-headers div {
-    font-size: 13px;
-    width: 32%;
+    font-size: 12px;
+    width: 30%;
     padding: 3px;
     font-weight: bold;
   }
 
   .set-row {
     margin-bottom: 6px;
-    gap: 2%;
-    justify-content: space-between;
+    gap: 8px;
   }
 
   .set-block {
-    width: 32%;
-    height: 60px;
-    font-size: 16px;
+    width: 30%;
+    height: 55px;
+    font-size: 15px;
     border-radius: 6px;
   }
 
@@ -533,25 +565,27 @@ button:hover {
   }
 
   button {
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 11px 16px;
+    font-size: 13px;
     border-radius: 6px;
     font-weight: 500;
+    max-width: 180px;
   }
 
   #btnReset {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 11px 20px;
+    font-size: 13px;
     margin-top: 10px;
+    max-width: 200px;
   }
 
   .global-info {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 10px;
   }
 
   .global-info p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .message {
@@ -566,7 +600,7 @@ button:hover {
 /* Telas muito pequenas */
 @media (max-width: 360px) {
   .title {
-    font-size: 15px;
+    font-size: 14px;
     padding: 6px 5px;
   }
 
@@ -576,34 +610,36 @@ button:hover {
 
   .team-a h2,
   .team-b h2 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .team-score {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .set-headers div {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .set-block {
-    height: 50px;
-    font-size: 15px;
+    height: 48px;
+    font-size: 14px;
   }
 
   button {
     padding: 10px 14px;
-    font-size: 13px;
+    font-size: 12px;
+    max-width: 160px;
   }
 
   #btnReset {
     padding: 10px 18px;
-    font-size: 13px;
+    font-size: 12px;
+    max-width: 180px;
   }
 
   .message {
-    font-size: 15px;
+    font-size: 14px;
     padding: 12px 18px;
   }
 }
