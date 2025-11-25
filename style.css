@@ -374,142 +374,170 @@ button:hover {
   }
 }
 
-/* Smartphones */
+/* Otimizando completamente para smartphones */
 @media (max-width: 480px) {
   body {
-    padding: 5px;
+    padding: 8px 5px;
+    min-height: 100vh;
   }
 
   .title {
-    font-size: 16px;
-    padding: 5px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    padding: 8px 5px;
+    margin-bottom: 12px;
+    line-height: 1.2;
   }
 
   .main-container {
-    gap: 10px;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 0;
   }
 
   .team-container {
-    padding: 12px;
+    padding: 15px 12px;
     border-radius: 12px;
+    width: 100%;
   }
 
   .team-a h2,
   .team-b h2 {
-    font-size: 16px;
+    font-size: 20px;
+    margin: 8px 0;
   }
 
   .team-score {
-    font-size: 24px;
+    font-size: 36px;
   }
 
   p {
-    font-size: 13px;
+    font-size: 15px;
     margin: 8px 0;
   }
 
   .sets-count {
-    font-size: 13px;
-    padding: 5px;
+    font-size: 14px;
+    padding: 8px;
+    margin: 10px 0;
   }
 
   .sets-number {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .rename-input {
-    font-size: 16px;
-    width: 120px;
-    padding: 4px 8px;
+    font-size: 18px;
+    width: 140px;
+    padding: 6px 10px;
   }
 
   .set-blocks-container {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 
   .set-headers {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 
   .set-headers div {
-    font-size: 12px;
-    width: 50px;
-    padding: 3px;
+    font-size: 14px;
+    width: 30%;
+    padding: 4px;
+    font-weight: bold;
   }
 
   .set-row {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    gap: 4px;
   }
 
   .set-block {
-    width: 50px;
-    height: 50px;
-    font-size: 14px;
+    width: 30%;
+    height: 65px;
+    font-size: 18px;
     border-radius: 8px;
   }
 
   .buttons {
-    margin-top: 10px;
+    margin-top: 12px;
+    gap: 8px;
   }
 
   button {
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 500;
   }
 
   #btnReset {
-    padding: 10px 15px;
-    font-size: 13px;
+    padding: 14px 24px;
+    font-size: 15px;
+    margin-top: 12px;
   }
 
   .global-info {
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .global-info p {
+    font-size: 16px;
   }
 
   .message {
-    padding: 12px 20px;
-    font-size: 16px;
-    max-width: 90%;
+    padding: 16px 24px;
+    font-size: 18px;
+    max-width: 85%;
     border-radius: 15px;
+    line-height: 1.4;
   }
 }
 
-/* Smartphones muito pequenos */
+/* Ajustes para telas muito pequenas */
 @media (max-width: 360px) {
   .title {
-    font-size: 14px;
+    font-size: 16px;
+    padding: 6px 5px;
+  }
+
+  .team-container {
+    padding: 12px 10px;
   }
 
   .team-a h2,
   .team-b h2 {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .team-score {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .set-headers div {
-    font-size: 11px;
-    width: 45px;
-  }
-
-  .set-block {
-    width: 45px;
-    height: 45px;
     font-size: 13px;
   }
 
+  .set-block {
+    height: 55px;
+    font-size: 16px;
+  }
+
   button {
-    padding: 8px 12px;
-    font-size: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  #btnReset {
+    padding: 12px 20px;
+    font-size: 14px;
   }
 
   .message {
-    font-size: 14px;
-    padding: 10px 15px;
+    font-size: 16px;
+    padding: 14px 20px;
   }
 }
