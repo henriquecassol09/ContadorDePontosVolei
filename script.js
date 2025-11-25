@@ -133,7 +133,6 @@ function determineMatchWinner() {
   setTimeout(resetGame, 5000)
 }
 
-/* Simplified message display without gradient effects */
 function showMessage(message, color) {
   messageDiv.textContent = message
   messageDiv.style.color = color

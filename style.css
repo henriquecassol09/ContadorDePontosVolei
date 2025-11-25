@@ -71,7 +71,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-
 }
 
 /* Removed fadeIn animation */
@@ -261,7 +260,7 @@ p {
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 6px; /* adicionado pequeno espaço entre os botões */
   margin-top: 15px;
 }
 
